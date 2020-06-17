@@ -30,10 +30,10 @@
                         <div class="card-body">
                             <form id="login_form">
                                 <div class="form-group">
-                                  <input type="text" class="form-control login_data" id="login_user_name" placeholder="User Name">
+                                  <input type="text" class="form-control login_data" id="login_user_name" placeholder="User Name" required>
                                 </div>
                                 <div class="form-group">
-                                  <input type="password" class="form-control login_data" id="login_password" placeholder="Password">
+                                  <input type="password" class="form-control login_data" id="login_password" placeholder="Password" required>
                                 </div>
                                 <input type="submit" class="btn btn-primary border-0 btn-block bg-success">
                             </form>
@@ -49,25 +49,26 @@
                         <div class="card-body">
                             <form id="register_form">
                                 <div class="form-group">
-                                  <input type="text" class="form-control register_data" id="first_name" placeholder="First Name">
+                                  <input type="text" class="form-control register_data" id="first_name" placeholder="First Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control register_data" id="last_name" placeholder="Last Name">
+                                    <input type="text" class="form-control register_data" id="last_name" placeholder="Last Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control register_data" id="user_name" placeholder="User Name">
+                                    <input type="text" class="form-control register_data" id="user_name" placeholder="User Name" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control register_data" id="user_email" placeholder="Email">
+                                    <input type="email" class="form-control register_data" id="user_email" placeholder="Email" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control register_data" id="mobile" placeholder="Mobile no">
+                                    <input type="text" class="form-control register_data" id="mobile" placeholder="Mobile no" required>
                                 </div>
                                 <div class="form-group">
-                                  <input type="password" class="form-control register_data" id="user_password" placeholder="Password">
+                                  <input type="password" class="form-control register_data" id="user_password" placeholder="Password" required>
                                 </div>
                                 <input type="submit" class="btn btn-primary border-0 btn-block bg-success">
                             </form>
+                            <div id="result_reg" class="text-danger"></div>
                         </div>
                     </div>
                 </div>
