@@ -6,15 +6,15 @@
         <title>Money manager</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script> -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <!-- font-family: 'Roboto', sans-serif; -->
     </head>
     <body class="bg-dark">
         <div class="container">
             <div class="row mb-5">
-                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-                    <div>
+                <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top" id="topbar">
+                    <div id="profile_name">
                         <h3>Dashboard</h3>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,133 +23,123 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item">
-                                <button class="btn btn-danger btn-sm font-weight-bold text-white" id="expense_entering_card">Add your Expense</button>
+                                <button class="btn btn-danger btn-sm font-weight-bold text-white" id="expense_card_display">Add your Expense</button>
                             </li>
                         </ul>
                     </div>
                 </nav>
             </div>
             <div class="row">
-                <div class="col-12 mt-5">
+                <div class="col-12 mt-5 mb-3">
                     <div class="card" id="expenses_block">
                         <div class="card-body">
-                            <form>
+                            <form id="expenses_form">
                                 <div class="d-flex">
                                     <div class="d-flex flex-column col-7">
                                         <div class="form-group row">
-                                            <div class="col-4">
-                                                <input type="text" class="form-control" id="monthly_income" placeholder="Monthly Income" required>
-                                            </div>
                                             <div class="d-flex col-8">
-                                                <div class="form-group w-100">
-                                                    <select class="form-control" id="day">
-                                                <option>Day</option>
-                                                <option value="01">1</option>
-                                                <option value="02">2</option>
-                                                <option value="03">3</option>
-                                                <option value="04">4</option>
-                                                <option value="05">5</option>
-                                                <option value="06">6</option>
-                                                <option value="07">7</option>
-                                                <option value="08">8</option>
-                                                <option value="09">9</option>
-                                                <option value="10">10</option>
-                                                <option value="11">11</option>
-                                                <option value="12">12</option>
-                                                <option value="13">13</option>
-                                                <option value="14">14</option>
-                                                <option value="15">15</option>
-                                                <option value="16">16</option>
-                                                <option value="17">17</option>
-                                                <option value="18">18</option>
-                                                <option value="19">19</option>
-                                                <option value="20">20</option>
-                                                <option value="21">21</option>
-                                                <option value="22">22</option>
-                                                <option value="23">23</option>
-                                                <option value="24">24</option>
-                                                <option value="25">25</option>
-                                                <option value="26">26</option>
-                                                <option value="27">27</option>
-                                                <option value="28">28</option>
-                                                <option value="29">29</option>
-                                                <option value="30">30</option>
-                                                <option value="31">31</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group w-100">
-                                                    <select class="form-control" id="month">
-                                                <option>Month</option>
-                                                <option value="01">January</option>
-                                                <option value="02">February</option>
-                                                <option value="03">March</option>
-                                                <option value="04">April</option>
-                                                <option value="05">May</option>
-                                                <option value="06">June</option>
-                                                <option value="07">July</option>
-                                                <option value="08">August</option>
-                                                <option value="09">September</option>
-                                                <option value="10">October</option>
-                                                <option value="11">November</option>
-                                                <option value="12">December</option> 
-                                                    </select>
-                                                </div>
-                                                <div class="form-group w-100">
-                                            <select class="form-control" id="year">
-                                                <option>Year</option>
-                                                <option value="2018">2018</option>
-                                                <option value="2019">2019</option>
-                                                <option value="2020">2020</option>
-                                                <option value="2021">2021</option>
-                                                <option value="2022">2022</option>
-                                                <option value="2023">2023</option>
-                                                <option value="2024">2024</option>
-                                                <option value="2025">2025</option>
-                                                <option value="2026">2026</option>
-                                                <option value="2027">2027</option>
-                                                <option value="2028">2028</option>
-                                                <option value="2029">2029</option>
-                                                <option value="2030">2030</option>
-                                            </select>
+                                                <div class="form-group d-flex">
+                                                    <div class="mr-2">Date</div>
+                                                    <input type="date" class="form-control offset-11" id="date">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="form-group row justify-content-between">
                                             <label for="transport" class="col-5 col-form-label">Transport</label>
                                             <div class="col-7">
-                                              <input type="text" class="form-control" id="transport">
+                                              <input type="text" class="form-control expense_data" id="transport">
                                             </div>
                                         </div>
                                         <div class="form-group row justify-content-between">
                                           <label for="food_&_others" class="col-5 col-form-label">Food & Others</label>
                                           <div class="col-7">
-                                            <input type="text" class="form-control" id="food_&_others">
+                                            <input type="text" class="form-control expense_data" id="food_&_others">
                                           </div>
                                         </div>
                                         <div class="form-group row justify-content-between">
                                             <label for="rent" class="col-5 col-form-label">Rent</label>
                                             <div class="col-7">
-                                              <input type="text" class="form-control" id="rent">
+                                              <input type="text" class="form-control expense_data" id="rent">
                                             </div>
                                         </div>
                                         <div class="form-group row justify-content-between">
                                             <label for="medicine_&_health" class="col-5 col-form-label">Medicine & Health</label>
                                             <div class="col-7">
-                                              <input type="text" class="form-control" id="medicine_&_health">
+                                              <input type="text" class="form-control expense_data" id="medicine_&_health">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group col-5">
                                       <label for="others">Anything else</label>
-                                      <textarea class="form-control col-12" id="others" rows="9"></textarea>
+                                      <textarea class="form-control col-12 expense_data" id="others" rows="9"></textarea>
                                     </div>
                                 </div>
+                                <input type="submit" class="btn btn-primary border-0 btn-block bg-success">
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card rounded py-3">
+                        <div class="card-body ">
+                            <div class="progress " style="height: 25px;">
+                                <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"> Income </div>
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Spendings</div>
+                            </div>                            
+                            <div id="result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="card bg-primary">
+                        <div class="card-header border-0">
+                          Income
+                        </div>
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">income</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  <form class="form-inline" id="income_form">
+                                    <div class="form-group mx-sm-3 mb-2">
+                                      <label for="monthly_income" class="sr-only">Income</label>
+                                      <input type="number" class="form-control" id="monthly_income">
+                                    </div>
+                                    <input type="submit" class="btn btn-primary mb-2" id='income_btn' value="confirm">
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        <div class="card card-body bg-primary border-0">
+                            <button type="button" class="btn btn-danger btn-block" data-toggle="modal" data-target="#exampleModalCenter" onclick="income_block()">Click to enter</button> 
+                        </div>
+                      </div>
+                </div>
+                <div class="col-6">
+                    <div class="card bg-danger">
+                        <div class="card-header border-0">
+                          Your Report
+                        </div>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-primary btn-block">Know your expenses</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
         <script type="text/javascript" src="js/dashboard.js"></script>
     </body>
 </html>
