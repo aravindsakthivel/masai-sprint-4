@@ -3,11 +3,11 @@ console.log(data.loggedUser)
 // console.log((Date().split("").slice(11, 15).join("")))
 var dataExpense = []
 var income = 10000
-var just_check = JSON.parse(localStorage.getItem(data.loggedUser))
-if (just_check !== null){
-    console.log(just_check)
-    console.log(just_check[0].expenses[0].day.length)
-}
+// var just_check = JSON.parse(localStorage.getItem(data.loggedUser))
+// if (just_check !== null){
+//     console.log(just_check)
+//     console.log(just_check[0].expenses[0].day.length)
+// }
 
 
 function pageLoad(){
@@ -42,7 +42,7 @@ function display_table(){
     d_table.style.display = ""
     var d_body = document.getElementById('table_body')
     d_body.innerHTML = ""
-
+    var just_check = JSON.parse(localStorage.getItem(data.loggedUser))
     var transportBill = 0
     var food_OthersBill = 0
     var rentBill = 0
@@ -158,6 +158,12 @@ window.addEventListener('load', function(){
 
     var expensesBlockDisplay = document.getElementById('expense_card_display')
     expensesBlockDisplay.addEventListener('click', displayExpenseBlock)
+
+    var dispTable = document.getElementById('display_table')
+    dispTable.addEventListener('click', display_table)
+
+    var incomeBlock = document.getElementById('income_block')
+    incomeBlock.addEventListener('click', income_block)
 
 })
 
