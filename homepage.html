@@ -6,7 +6,7 @@
         <title>Money manager</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/de9b2fe369.js" crossorigin="anonymous"></script> -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <!-- font-family: 'Roboto', sans-serif; -->
     </head>
@@ -55,14 +55,14 @@
                                       <div class="form-group w-100">
                                           <input type="text" class="form-control register_data" id="last_name" placeholder="Last Name" required>
                                       </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control register_data" id="user_name" placeholder="User Name" required>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control register_data" id="user_password" placeholder="Password" required>
-                                </div>
-                                <div class="d-flex justify-content-between">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control register_data" id="user_name" placeholder="User Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control register_data" id="user_password" placeholder="Password" required>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
                                     <div class="form-group w-100">
                                         <input type="email" class="form-control register_data" id="user_email" placeholder="Email" required>
                                     </div>
@@ -73,6 +73,7 @@
                                 <input type="submit" class="btn btn-primary border-0 btn-block bg-success">
                             </form>
                             <div id="result_reg" class="text-danger"></div>
+                            <div id="success"></div>
                         </div>
                     </div>
                 </div>
